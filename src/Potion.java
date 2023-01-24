@@ -5,6 +5,12 @@ public class Potion {
 
     private int stirs;
 
+    public Potion() {
+        this.ing1 =null;
+        this.ing2 =null;
+        this.ing3 =null;
+    }
+
     public Potion(Ingretiant ing1, Ingretiant ing2, Ingretiant ing3) {
         this.ing1 = ing1;
         this.ing2 = ing2;
@@ -13,6 +19,14 @@ public class Potion {
 
     public void stir() {
         stirs++;
+    }
+
+    public int getStirs() {
+        return stirs;
+    }
+
+    public void setStirs(int stirs) {
+        this.stirs = stirs;
     }
 
     public int getPowerSum() {
