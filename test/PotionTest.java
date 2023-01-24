@@ -17,8 +17,6 @@ class PotionTest {
     }
 
 
-
-
     @org.junit.jupiter.api.Test
     void stir() {
         potion.stir();
@@ -28,9 +26,20 @@ class PotionTest {
 
     @org.junit.jupiter.api.Test
     void getPowerSum() {
+        assertEquals(35,potion.getPowerSum());
+        ing1.setName("bob");
+        potion = new Potion(ing1,ing2,ing3);
+        assertEquals(20,potion.getPowerSum());
     }
 
     @org.junit.jupiter.api.Test
     void isReady() {
+        potion.stir();
+        potion.stir();
+        potion.stir();
+        assertFalse(potion.isReady());
+        potion.stir();
+        potion.stir();
+        assertTrue(potion.isReady());
     }
 }
